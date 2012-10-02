@@ -1,0 +1,42 @@
+name:                haskell-testing-stub
+version:             1.0.0
+license:             PublicDomain
+license-file:        LICENSE
+author:              Jan Stolarek <jan.stolarek@p.lodz.pl>
+maintainer:          jan.stolarek@p.lodz.pl
+copyright:           (c) 2012 Jan Stolarek
+bug-reports:         https://github.com/killy9999/haskell-testing-stub/issues
+homepage:            https://github.com/killy9999/haskell-testing-stub
+synopsis:            Stub project showing how to organize code tests in Haskell
+description:         This stub project shows how to separate tests from the
+                     source code, use cabal to automate tests and combine tests
+                     created using HUnit and QuickCheck into one test suite.
+stability:           stable
+category:            Testing
+build-type:          Simple
+cabal-version:       >=1.8
+tested-with:         GHC>=7.4
+extra-source-files:  README.md
+
+source-repository head
+   type:     git
+   location: git://github.com/killy9999/haskell-testing-stub.git
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Signal
+  other-modules:       Signal.Utils
+  build-depends:       base
+  ghc-options:         -Wall
+
+test-suite wavelet-hs-test
+  type:              exitcode-stdio-1.0
+  hs-source-dirs:    tests, src
+  main-is:           MainTestSuite.hs
+  build-depends:     base,
+                     Cabal,
+                     HUnit,
+                     QuickCheck,
+                     test-framework,
+                     test-framework-hunit,
+                     test-framework-quickcheck2
