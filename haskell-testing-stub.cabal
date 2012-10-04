@@ -34,7 +34,6 @@ test-suite wavelet-hs-test
   hs-source-dirs:    tests, src
   main-is:           MainTestSuite.hs
   build-depends:     base,
-                     Cabal,
                      HUnit,
                      QuickCheck,
                      test-framework,
