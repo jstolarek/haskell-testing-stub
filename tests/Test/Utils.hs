@@ -13,10 +13,10 @@ class AEq a where
     (=~) :: a -> a -> Bool
 
 instance AEq Double where
-    x =~ y = abs ( x - y ) < (1.0e-10 :: Double)
+    x =~ y = abs ( x - y ) < (1.0e-8 :: Double)
 
 instance (AEq a) => AEq [a] where
-    xs =~ ys = (length xs == length ys) && 
+    xs =~ ys = (length xs == length ys) &&
                 (all (\(x,y) -> x =~ y) $ zip xs ys)
 
 instance (AEq a) => AEq (Maybe a) where
@@ -29,7 +29,7 @@ instance (AEq a) => AEq (Maybe a) where
 testWithProvider :: String -> (a -> HU.Assertion) -> [a] -> TF.Test
 testWithProvider testGroupName testFunction =
     TF.testGroup testGroupName . map createTest . zipWith assignName [1::Int ..]
-      where 
+      where
         createTest (name, dataSet)   = TFH.testCase name $ testFunction dataSet
         assignName setNumber dataSet = ("Data set " ++ show setNumber, dataSet)
 
@@ -37,7 +37,7 @@ testWithProvider testGroupName testFunction =
 (@=~?) :: (Show a, AEq a) => a -> a -> HU.Assertion
 (@=~?) expected actual  = expected =~ actual HU.@? assertionMsg
     where
-      assertionMsg = "Expected : " ++ show expected ++ 
+      assertionMsg = "Expected : " ++ show expected ++
                      "\nActual   : " ++ show actual
 
 (?=~@) :: (Show a, AEq a) => a -> a -> HU.Assertion
