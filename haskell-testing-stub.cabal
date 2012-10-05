@@ -8,9 +8,18 @@ copyright:           (c) 2012 Jan Stolarek
 bug-reports:         https://github.com/killy9999/haskell-testing-stub/issues
 homepage:            https://github.com/killy9999/haskell-testing-stub
 synopsis:            Stub project showing how to organize code tests in Haskell
-description:         This stub project shows how to separate tests from the
-                     source code, use cabal to automate tests and combine tests
-                     created using HUnit and QuickCheck into one test suite.
+description:         This stub project shows how to:
+
+                     * separate tests from the source code
+                     * use cabal to automate tests
+                     * combine tests created using HUnit and QuickCheck into one
+                       test suite.
+                     * supply one HUnit test with many test data sets
+                     * create assertions for floating point values
+
+                     References:
+
+                     * <http://ics.p.lodz.pl/~stolarek/blog/2012/10/code-testing-in-haskell/>
 stability:           stable
 category:            Testing
 build-type:          Simple
