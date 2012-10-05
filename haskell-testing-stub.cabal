@@ -29,7 +29,7 @@ library
   build-depends:       base
   ghc-options:         -Wall
 
-test-suite wavelet-hs-test
+test-suite signal-tests
   type:              exitcode-stdio-1.0
   hs-source-dirs:    tests, src
   main-is:           MainTestSuite.hs
