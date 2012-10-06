@@ -6,20 +6,20 @@
 -- They are reexported in Signal module to create a public API of the library
 module Signal.Utils where
 
-cyclicOneShiftLeft :: (Num a) => [a] -> [a] 
-cyclicOneShiftLeft xs = tail xs ++ [head xs]
+cyclicOneShiftLeft :: (Num a) => [a] -> [a]
+cyclicOneShiftLeft (x:xs) = xs ++ [x]
 
-cyclicOneShiftRight :: (Num a) => [a] -> [a] 
+cyclicOneShiftRight :: (Num a) => [a] -> [a]
 cyclicOneShiftRight xs = last xs : init xs
 
-cyclicShiftLeft :: (Num a) => Int -> [a] -> [a] 
+cyclicShiftLeft :: (Num a) => Int -> [a] -> [a]
 cyclicShiftLeft _ [] = []
-cyclicShiftLeft n xs 
+cyclicShiftLeft n xs
     | n > 0     = cyclicShiftLeft (n - 1) . cyclicOneShiftLeft $ xs
     | otherwise = xs
 
-cyclicShiftRight :: (Num a) => Int -> [a] -> [a] 
+cyclicShiftRight :: (Num a) => Int -> [a] -> [a]
 cyclicShiftRight _ [] = []
-cyclicShiftRight n xs 
+cyclicShiftRight n xs
     | n > 0     = cyclicShiftRight (n - 1) . cyclicOneShiftRight $ xs
     | otherwise = xs
