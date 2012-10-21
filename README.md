@@ -11,6 +11,9 @@ Haskell project. It shows how to:
   * create HUnit tests that run with many different test data sets.
   * use criterion to create code benchmarks
 
-For a detailed discussion of the code visit [my blog]
-(http://ics.p.lodz.pl/~stolarek/blog/2012/09/code-testing-in-haskell). 
-Read also comments in the source code itself.
+Visit my blog for a detailed discussion of code [testing]
+(http://ics.p.lodz.pl/~stolarek/blog/2012/09/code-testing-in-haskell) and
+[benchmarking]
+(http://ics.p.lodz.pl/~stolarek/blog/2012/10/code-benchmarking-in-haskell/) in 
+Haskell.
+See also comments in the source code.

@@ -6,7 +6,7 @@ import Criterion.Config
 import Criterion.Main
 import System.Random
 
-import qualified BenchParam        as P 
+import qualified BenchParam        as P
 import qualified Signal.UtilsBench as U
 
 main :: IO ()
