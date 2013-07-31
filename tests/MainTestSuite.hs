@@ -23,7 +23,8 @@ tests =
      , testProperty     "R/L one shift composition" propCyclicOneShiftIdentity2
      , testProperty     "Left shift identity"       propLeftShiftIdentity
      , testProperty     "Right shift identity"      propRightShiftIdentity
-     , testWithProvider "Cyclic left shift"         testCyclicShiftLeft
+     , testCase         "Cyclic left shift by one"  testCyclicOneShiftLeftAssertion
+     , testWithProvider "Cyclic left shift "        testCyclicShiftLeft
                                                     dataCyclicShiftLeft
     ]
   ]
