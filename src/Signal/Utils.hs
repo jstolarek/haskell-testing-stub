@@ -8,6 +8,7 @@ module Signal.Utils where
 
 cyclicOneShiftLeft :: (Num a) => [a] -> [a]
 cyclicOneShiftLeft (x:xs) = xs ++ [x]
+cyclicOneShiftLeft [] = []
 
 cyclicOneShiftRight :: (Num a) => [a] -> [a]
 cyclicOneShiftRight xs = last xs : init xs
