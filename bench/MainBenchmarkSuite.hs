@@ -10,7 +10,7 @@ import qualified BenchParam        as P
 import qualified Signal.UtilsBench as U
 
 main :: IO ()
-main = newStdGen >>= defaultMainWith benchConfig (return ()) . benchmarks
+main = defaultMainWith benchConfig (return ()) . benchmarks $ mkStdGen 123456
 
 -- This function assembles all benchmarks. let-binding is used because the same
 -- data is shared between different functions, but in general this is not
@@ -20,7 +20,7 @@ benchmarks gen =
     let paramCyclicShift = U.dataShift gen P.shiftSize P.sigSize
     in [
       bgroup "Signal shifts"
-      [ 
+      [
         bench "Left shift"  $ nf U.benchCyclicShiftLeft  paramCyclicShift
       , bench "Right shift" $ nf U.benchCyclicShiftRight paramCyclicShift
       ]
