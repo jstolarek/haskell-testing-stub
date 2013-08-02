@@ -10,8 +10,8 @@ Haskell project. It shows how to:
     to create a coherent test suite containing both [HUnit]
     (http://hackage.haskell.org/package/HUnit) and [QuickCheck]
     (http://hackage.haskell.org/package/QuickCheck) tests
-  * create http://hackage.haskell.org/package/QuickCheck tests that run with
-    many different test data sets.
+  * create [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests
+    that run with many different test data sets.
   * use [criterion](http://hackage.haskell.org/package/criterion) to create code
     benchmarks
 
@@ -24,7 +24,7 @@ Haskell. See also comments in the source code.
 Running tests
 =============
 
-To compile and run tests you need to execute these commands:
+Execute these commands to compile and run tests:
 
 ```
 cabal configure --enable-tests
@@ -35,7 +35,7 @@ cabal test
 Running benchmarks
 ==================
 
-To compile and run benchmarks you need to execute these commands:
+Execute these commands to compile and run benchmarks:
 
 ```
 cabal configure --enable-benchmarks
@@ -46,8 +46,8 @@ cabal bench
 Compiling the library
 =====================
 
-To simply install the library, without the benchmarking and testing code,
-execute these commands:
+Execute these commands to install the library without benchmarking and testing
+code:
 
 ```
 cabal configure
