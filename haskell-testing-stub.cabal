@@ -18,18 +18,19 @@ description:        This stub project shows how to:
                     * create assertions for floating point values
 
                     References:
-                    
-                    * <http://ics.p.lodz.pl/~stolarek/blog/2012/10/code-testing-in-haskell/>
+
+                    * <http://lambda.jstolarek.com/2012/10/code-testing-in-haskell/>
+                    * <http://lambda.jstolarek.com/2012/10/code-benchmarking-in-haskell/>
 stability:          stable
 category:           Testing
 build-type:         Simple
 cabal-version:      >=1.8
-tested-with:        GHC>=7.4
+tested-with:        GHC>=7.6.3
 extra-source-files: README.md
 
 source-repository head
    type:     git
-   location: git://github.com/killy9999/haskell-testing-stub.git
+   location: git://github.com/jstolarek/haskell-testing-stub.git
 
 library
   hs-source-dirs:   src
@@ -46,9 +47,9 @@ test-suite signal-tests
   build-depends:    base,
                     HUnit,
                     QuickCheck,
-                    test-framework,
-                    test-framework-hunit,
-                    test-framework-quickcheck2
+                    tasty,
+                    tasty-hunit,
+                    tasty-quickcheck
 
 benchmark signal-bench
   type:             exitcode-stdio-1.0
@@ -57,5 +58,5 @@ benchmark signal-bench
   build-depends:    base,
                     criterion,
                     random
-  ghc-options:      -Wall 
+  ghc-options:      -Wall
                     -O2

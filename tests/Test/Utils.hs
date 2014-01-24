@@ -1,13 +1,15 @@
 module Test.Utils (
-    testWithProvider
+    hUnitTestToTests
+  , testWithProvider
   , (@=~?)
   , (?=~@)
   , (=~)
  ) where
 
-import qualified Test.Framework                 as TF
-import qualified Test.Framework.Providers.HUnit as TFH
-import qualified Test.HUnit                     as HU
+import qualified Test.Tasty       as TF
+import qualified Test.Tasty.HUnit as TFH
+import qualified Test.HUnit       as HU
+import qualified Test.HUnit.Base  as HUB
 
 class AEq a where
     (=~) :: a -> a -> Bool
@@ -24,9 +26,26 @@ instance (AEq a) => AEq (Maybe a) where
     Just x  =~ Just y  = x =~ y
     _       =~ _       = False
 
+-- migrated from test-framework-hunit, beause tasty-hunit does not
+-- have this functions
+hUnitTestToTests :: HUB.Test -> [TF.TestTree]
+hUnitTestToTests = go ""
+  where
+    go desc (HUB.TestCase a)    = [TFH.testCase desc a]
+    go desc (HUB.TestLabel s t)
+      | null desc = go s t
+      | otherwise = go (desc ++ ":" ++ s) t
+    go desc (HUB.TestList ts)
+        -- If the list occurs at the top level (with no description above it),
+        -- just return that list straightforwardly
+      | null desc = concatMap (go desc) ts
+        -- If the list occurs with a description, turn that into a honest-to-god
+        -- test group. This is heuristic, but likely to give good results
+      | otherwise = [TF.testGroup desc (concatMap (go "") ts)]
+
 -- This function takes the name for the test, a testing function and a data
 -- provider and creates a testGroup
-testWithProvider :: String -> (a -> HU.Assertion) -> [a] -> TF.Test
+testWithProvider :: String -> (a -> HU.Assertion) -> [a] -> TF.TestTree
 testWithProvider testGroupName testFunction =
     TF.testGroup testGroupName . map createTest . zipWith assignName [1::Int ..]
       where
