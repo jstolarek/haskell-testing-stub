@@ -11,13 +11,13 @@ import Signal.Utils
 -- Next function shows how to create test functions that neatly integrate
 -- with test-framework
 testCyclicOneShiftRightHU :: Test
-testCyclicOneShiftRightHU = 
+testCyclicOneShiftRightHU =
     "Cyclic one shift right" ~: [4,1,2,3]  @=? cyclicOneShiftRight [1,2,3,4]
 
 -- A recommended way of creating HUnit tests. Such tests are easy to integrate
 -- with test-framework (see MainTestSuite.hs)
 testCyclicOneShiftLeftAssertion :: Assertion
-testCyclicOneShiftLeftAssertion = 
+testCyclicOneShiftLeftAssertion =
     [4,1,2,3] @=? cyclicOneShiftRight [1,2,3,4]
 
 -- HUnit test function working with data provider. Notice also that it uses my
@@ -41,12 +41,12 @@ dataCyclicShiftLeft =
 -- Below are standard QuickCheck properties
 
 propCyclicOneShiftIdentity1 :: [Double] -> Property
-propCyclicOneShiftIdentity1 xs = 
+propCyclicOneShiftIdentity1 xs =
     not (null xs) ==>
         cyclicOneShiftLeft (cyclicOneShiftRight xs) == xs
 
 propCyclicOneShiftIdentity2 :: [Double] -> Property
-propCyclicOneShiftIdentity2 xs = 
+propCyclicOneShiftIdentity2 xs =
     not (null xs) ==>
         cyclicOneShiftRight (cyclicOneShiftLeft xs) == xs
 

@@ -13,7 +13,7 @@ benchCyclicShiftLeft (n, sig) = cyclicShiftLeft n sig
 
 {-# INLINE benchCyclicShiftRight #-}
 benchCyclicShiftRight :: (Int, [Double]) -> [Double]
-benchCyclicShiftRight (n, sig) = cyclicShiftRight n sig 
+benchCyclicShiftRight (n, sig) = cyclicShiftRight n sig
 
 -- Function that generates data on which benchmarked functions will operate
 dataShift :: RandomGen g => g -> Int -> Int -> (Int, [Double])
