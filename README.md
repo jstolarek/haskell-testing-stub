@@ -6,19 +6,19 @@ Haskell project. It shows how to:
   * separate tests and benchmarks from the actual code, so that users don't need
     to install testing and benchmarking libraries
   * use cabal to automate testing and benchmarking
-  * use [test-framework](http://hackage.haskell.org/package/test-framework)
+  * use [tasty](http://hackage.haskell.org/package/tasty)
     to create a coherent test suite containing both [HUnit]
     (http://hackage.haskell.org/package/HUnit) and [QuickCheck]
     (http://hackage.haskell.org/package/QuickCheck) tests
   * create [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests
     that run with many different test data sets.
-  * use [criterion](http://hackage.haskell.org/package/criterion) to create code
+  * use [criterion](http://hackage.haskell.org/package/criterion) to create
     benchmarks
 
 Visit my blog for a detailed discussion of code [testing]
-(http://ics.p.lodz.pl/~stolarek/blog/2012/09/code-testing-in-haskell) and
+(http://lambda.jstolarek.com/2014/01/code-testing-in-haskell-revisited-with-tasty/) and
 [benchmarking]
-(http://ics.p.lodz.pl/~stolarek/blog/2012/10/code-benchmarking-in-haskell/) in
+(http://lambda.jstolarek.com/2012/10/code-benchmarking-in-haskell/) in
 Haskell. See also comments in the source code.
 
 Running tests
