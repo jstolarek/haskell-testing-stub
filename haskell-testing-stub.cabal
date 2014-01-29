@@ -5,8 +5,8 @@ license-file:       LICENSE
 author:             Jan Stolarek <jan.stolarek@p.lodz.pl>
 maintainer:         jan.stolarek@p.lodz.pl
 copyright:          (c) 2012 Jan Stolarek
-bug-reports:        https://github.com/killy9999/haskell-testing-stub/issues
-homepage:           https://github.com/killy9999/haskell-testing-stub
+bug-reports:        https://github.com/jstolarek/haskell-testing-stub/issues
+homepage:           https://github.com/jstolarek/haskell-testing-stub
 synopsis:           Stub project showing how to organize code tests in Haskell
 description:        This stub project shows how to:
 
