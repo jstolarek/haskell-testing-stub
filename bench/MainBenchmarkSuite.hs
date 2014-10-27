@@ -2,15 +2,15 @@ module Main (
     main
  ) where
 
-import Criterion.Config
 import Criterion.Main
+import Criterion.Types
 import System.Random
 
 import qualified BenchParam        as P
 import qualified Signal.UtilsBench as U
 
 main :: IO ()
-main = defaultMainWith benchConfig (return ()) . benchmarks $ mkStdGen 123456
+main = defaultMainWith benchConfig . benchmarks $ mkStdGen 123456
 
 -- This function assembles all benchmarks. let-binding is used because the same
 -- data is shared between different functions, but in general this is not
@@ -30,5 +30,5 @@ benchmarks gen =
 -- good idea to do so. Otherwise GC might distort your results
 benchConfig :: Config
 benchConfig = defaultConfig {
-             cfgPerformGC = ljust True
+             forceGC = True
            }

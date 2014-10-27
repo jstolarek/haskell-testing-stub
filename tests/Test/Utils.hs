@@ -27,7 +27,7 @@ instance (AEq a) => AEq (Maybe a) where
     _       =~ _       = False
 
 -- migrated from test-framework-hunit, beause tasty-hunit does not
--- have this functions
+-- have this function
 hUnitTestToTests :: HUB.Test -> [TF.TestTree]
 hUnitTestToTests = go ""
   where

@@ -1,5 +1,5 @@
--- This module creates the public API for the library. It import all
--- internal modules and reexports only selected functions.
+-- This module creates the public API for the library. It imports all
+-- internal modules and re-exports only selected functions.
 module Signal (
     cyclicShiftLeft
   , cyclicShiftRight

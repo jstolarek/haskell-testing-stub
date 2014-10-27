@@ -3,12 +3,11 @@
 -- cyclicOneShiftRight are partial functions. They do not work for empty list.
 -- Note also that they will not be part of a public API (see src/Signal.hs)
 -- On the other hand cyclicShiftLeft and cyclicShiftRight are total functions.
--- They are reexported in Signal module to create a public API of the library
+-- They are re-exported in Signal module to create a public API of the library.
 module Signal.Utils where
 
 cyclicOneShiftLeft :: (Num a) => [a] -> [a]
-cyclicOneShiftLeft (x:xs) = xs ++ [x]
-cyclicOneShiftLeft [] = []
+cyclicOneShiftLeft xs = tail xs ++ [head xs]
 
 cyclicOneShiftRight :: (Num a) => [a] -> [a]
 cyclicOneShiftRight xs = last xs : init xs
