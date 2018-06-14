@@ -1,6 +1,8 @@
 haskell-testing-stub
 ====================
 
+**IMPORTANT:** This repository is now [hosted on BitBucket](https://bitbucket.org/jstolarek/haskell-testing-stub).
+
 This stub project demonstrates how to organize code tests and benchmarks in a
 Haskell project. It shows how to:
   * separate tests and benchmarks from the actual code, so that users don't need
