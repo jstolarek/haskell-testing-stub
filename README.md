@@ -7,18 +7,15 @@ Haskell project. It shows how to:
     to install testing and benchmarking libraries
   * use cabal to automate testing and benchmarking
   * use [tasty](http://hackage.haskell.org/package/tasty)
-    to create a coherent test suite containing both [HUnit]
-    (http://hackage.haskell.org/package/HUnit) and [QuickCheck]
-    (http://hackage.haskell.org/package/QuickCheck) tests
+    to create a coherent test suite containing both [HUnit](http://hackage.haskell.org/package/HUnit)
+    and [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests
   * create [QuickCheck](http://hackage.haskell.org/package/QuickCheck) tests
     that run with many different test data sets.
   * use [criterion](http://hackage.haskell.org/package/criterion) to create
     benchmarks
 
-Visit my blog for a detailed discussion of code [testing]
-(http://lambda.jstolarek.com/2014/01/code-testing-in-haskell-revisited-with-tasty/) and
-[benchmarking]
-(http://lambda.jstolarek.com/2012/10/code-benchmarking-in-haskell/) in
+Visit my blog for a detailed discussion of code [testing](http://lambda.jstolarek.com/2014/01/code-testing-in-haskell-revisited-with-tasty/) and
+[benchmarking](http://lambda.jstolarek.com/2012/10/code-benchmarking-in-haskell/) in
 Haskell. See also comments in the source code.
 
 Running tests
